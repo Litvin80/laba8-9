@@ -37,7 +37,9 @@ class ResetPasswordScreen extends StatelessWidget {
           builder: (BuildContext ctx) {
             return const AlertDialog(
               title: Text('Password Reset'),
-              content: Text("Instructions to reset your password have been sent to your email."),
+              content: Text(
+                "Instructions to reset your password have been sent to your email.",
+              ),
             );
           },
         );
@@ -65,17 +67,19 @@ class ResetPasswordScreen extends StatelessWidget {
               controller: emailController,
               decoration: const InputDecoration(
                 labelText: "Email",
-                border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 20),
 
-            SizedBox(
-              height: 48,
-              child: ElevatedButton(
-                onPressed: _validateAndSendReset,
-                child: const Text("Reset Password"),
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: _validateAndSendReset,
+                    child: const Text("Login"),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

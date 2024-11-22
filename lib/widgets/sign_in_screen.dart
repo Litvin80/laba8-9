@@ -16,8 +16,7 @@ class _SignInScreenState extends State<SignInScreen> {
   void _validateAndLogin() {
     final email = _emailController.text;
     final password = _passwordController.text;
-
-    // Регулярний вираз для перевірки електронної пошти
+    
     final emailPattern = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
 
     if (email.isEmpty || password.isEmpty) {
@@ -84,7 +83,6 @@ class _SignInScreenState extends State<SignInScreen> {
               controller: _emailController,
               decoration: const InputDecoration(
                 labelText: "Email",
-                border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 16.0),
@@ -94,10 +92,8 @@ class _SignInScreenState extends State<SignInScreen> {
               obscureText: true,
               decoration: const InputDecoration(
                 labelText: "Password",
-                border: OutlineInputBorder(),
               ),
             ),
-            const SizedBox(height: 16.0),
 
             GestureDetector(
               onTap: () {
@@ -118,12 +114,9 @@ class _SignInScreenState extends State<SignInScreen> {
             Row(
               children: [
                 Expanded(
-                  child: SizedBox(
-                    height: 48,
-                    child: ElevatedButton(
-                      onPressed: _validateAndLogin,
-                      child: const Text("Login"),
-                    ),
+                  child: ElevatedButton(
+                    onPressed: _validateAndLogin,
+                    child: const Text("Login"),
                   ),
                 ),
               ],

@@ -79,7 +79,6 @@ class SignupScreen extends StatelessWidget {
               controller: nameController,
               decoration: const InputDecoration(
                 labelText: "Name",
-                border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 16),
@@ -88,7 +87,6 @@ class SignupScreen extends StatelessWidget {
               controller: emailController,
               decoration: const InputDecoration(
                 labelText: "Email",
-                border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 16),
@@ -98,17 +96,19 @@ class SignupScreen extends StatelessWidget {
               obscureText: true,
               decoration: const InputDecoration(
                 labelText: "Password",
-                border: OutlineInputBorder(),
               ),
             ),
             const SizedBox(height: 24),
 
-            SizedBox(
-              height: 48,
-              child: ElevatedButton(
-                onPressed: _validateAndSignup,
-                child: const Text("Sign Up"),
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: _validateAndSignup,
+                    child: const Text("Login"),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
